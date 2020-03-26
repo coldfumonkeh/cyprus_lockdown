@@ -4,7 +4,7 @@
     <b-container fluid>
       <b-navbar type="dark" variant="dark">
         <b-navbar-nav>
-          <b-nav-item href="/">Home</b-nav-item>
+          <b-nav-item href="/cypruslockdown">Home</b-nav-item>
 
           <b-nav-item><router-link to="/sms">{{ $t( 'home.send_sms_header' ) }}</router-link></b-nav-item>
           <b-nav-item><router-link to="/forma">{{ $t( 'home.form_a_header' ) }}</router-link></b-nav-item>

@@ -25,7 +25,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'vue2-timepicker/dist/VueTimepicker.css'
 
 const router = new VueRouter({
-  mode: 'history',
+  // mode: 'history',
   routes: [
     {
       path: '/',

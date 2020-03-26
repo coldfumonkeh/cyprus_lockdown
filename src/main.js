@@ -19,6 +19,7 @@ import Home from './components/Home.vue';
 import SMS from './components/SMS.vue';
 import FormA from './components/FormA.vue';
 import FormB from './components/FormB.vue';
+import Legal from './components/Legal.vue';
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -49,6 +50,12 @@ const router = new VueRouter({
       path: '/formb',
       components: {
         default: FormB
+      }
+    },
+    {
+      path: '/legal',
+      components: {
+        default: Legal
       }
     }
   ]

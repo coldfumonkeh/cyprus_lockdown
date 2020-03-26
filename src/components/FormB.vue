@@ -11,7 +11,7 @@
           <h3>{{ $t( 'forms.b.form_header' ) }}</h3>
 
           <p style="margin-top: 40px;">
-            {{ $t( 'forms.b.the_undersigned' ) }} <b-form-input class="form-inline" id="employee_name" v-model="employee_name" :placeholder="$t( 'forms.a.placeholders.employee_input' )" />
+            {{ $t( 'forms.b.the_undersigned' ) }} <b-form-input class="form-inline" id="undersigned_value" v-model="undersigned_value" :placeholder="$t( 'forms.b.the_undersigned' )" />
           </p>
 
           <b-form-group :label="$t( 'forms.b.date_of_birth' )">

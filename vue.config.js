@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: "/cyprus_lockdown",
+  publicPath: "/cypruslockdown",
   outputDir: "docs",
   pluginOptions: {
     i18n: {

@@ -1,0 +1,69 @@
+{
+  "home": {
+    "send_sms_header": "Send SMS",
+    "form_a_header": "Form A",
+    "form_b_header": "Form B",
+    "send_sms_para": "create the SMS",
+    "form_a_para": "for employees and must be filled by the employer. It also applies for the self-employed",
+    "form_b_para": "for members of the public"
+  },
+  "sms": {
+    "id_passport": "ID / Passport number",
+    "postcode": "postcode",
+    "reason_for_going_out": "reason for going out",
+    "create_sms_button": "Create SMS"
+  },
+  "forms": {
+    "missing_info": "Please complete the missing information",
+    "generate_form_button": "Generate Form",
+    "ok_modal_button": "OK",
+    "a": {
+      "form_header": "CONFIRMATION FOR EMPLOYEE’S MOVEMENT",
+      "the_employee": "The employee",
+      "of_company": "of the company/service/organization",
+      "with_id_passport": "with identity card/passport number",
+      "is_obliged_to_travel": "is obliged to travel for work purposes to the district/s",
+      "between": "between",
+      "and": "and",
+      "o_clock": "o' clock",
+      "shall_be_identified": "The above employee shall be identified by showing his/her identity card/passport.",
+      "employer_supervisor_name": "Name of employer/supervisor",
+      "signature": "Signature of employer/supervisor",
+      "date": "Date",
+      "same_form_used": "The same form should be used by self-employed",
+      "placeholders": {
+        "employee_input": "employee",
+        "company_input": "company/service/organization",
+        "identity_input": "identity/passport number",
+        "travel_to_districts": "districts",
+        "employer_name": "employer/supervisor name"
+      }
+    },
+    "b": {
+      "form_header": "DECLARATION OF CITIZEN'S MOVEMENT IN EXCEPTIONAL CASES",
+      "the_undersigned": "The undersigned",
+      "date_of_birth": "date of birth",
+      "id_number": "identity card / passport number",
+      "home_address": "home address",
+      "declare_need": "I declare that the need for travelling at",
+      "exact_time": "(fill in the exact time)",
+      "relates_to_reason": "relates to the following reasons:",
+      "relates_to_reason_print": "relates to the following reason:",
+      "tick_box": "(tick the appropriate box below)",
+      "any_other_reason_placeholder": "Please state your reason",
+      "options": {
+        "1": "Visiting a pharmacy or a doctor or going for blood donation",
+        "2": "Visiting a shop/supermarket for essential supplies/services",
+        "3": "Visiting the bank for services that online transactions are not possible",
+        "4": "Visiting public services or services of the wider public sector and local \r\nauthorities only for urgent needs",
+        "5": "Helping people who cannot take care of themselves or people who must \r\nbe protected or who are in self-isolation and/or in compulsory isolation \n(quarantine)",
+        "6": "For physical activity or for pet needs, provided that there are not more \nthan two people together and restrict themselves in areas adjacent to \ntheir residence",
+        "7": "Going to a ceremony (e.g. funeral, wedding, christening) of first and \nsecond degree relatives not exceeding 10 people",
+        "8": "Any other reason, as stated below:"
+      },
+      "id_note": "Note: The citizens should carry their identity card/passport",
+      "signature": "Signature",
+      "date": "Date"
+    }
+  }
+}

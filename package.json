@@ -5,19 +5,33 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0",
+    "bootstrap": "^4.4.1",
+    "bootstrap-vue": "^2.9.0",
     "core-js": "^3.6.4",
-    "vue": "^2.6.11"
+    "jspdf": "^1.5.3",
+    "moment": "^2.24.0",
+    "vue": "^2.6.11",
+    "vue-i18n": "^8.0.0",
+    "vue-router": "^3.1.6",
+    "vue-sweetalert2": "^3.0.3",
+    "vue2-timepicker": "^1.0.8",
+    "vuejs-datepicker": "^1.6.2",
+    "vuelidate": "^0.7.5"
   },
   "devDependencies": {
+    "@kazupon/vue-i18n-loader": "^0.3.0",
     "@vue/cli-plugin-babel": "^4.2.0",
     "@vue/cli-plugin-eslint": "^4.2.0",
     "@vue/cli-service": "^4.2.0",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.1.2",
+    "vue-cli-plugin-i18n": "^0.6.1",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {

@@ -1,6 +1,6 @@
 <template>
 
-  <b-container style="margin-top: 40xp;">
+  <b-container style="margin-top: 40px;">
       
     <b-row>
 

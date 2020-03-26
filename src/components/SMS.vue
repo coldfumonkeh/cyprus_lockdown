@@ -26,7 +26,7 @@
             <b-form-textarea v-model="anyOtherReasonText" rows="3" max-rows="6" :placeholder="$t( 'forms.b.any_other_reason_placeholder' )"></b-form-textarea>
           </div>
 
-          <b-button variant="primary" @click="validateForm">{{ $t( 'sms.create_sms_button' ) }}</b-button>
+          <b-button block variant="primary" @click="validateForm">{{ $t( 'sms.create_sms_button' ) }}</b-button>
 
         </b-form>
 

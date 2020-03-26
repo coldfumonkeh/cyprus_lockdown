@@ -4,7 +4,12 @@
 
     <b-jumbotron header="Cyprus Lockdown Forms" lead="#stayInside #stayhome"></b-jumbotron>
 
-    <b-row class="text-center">
+    <div class="alert alert-info" role="alert">
+      <h4 class="alert-heading">{{ $t( 'home.privacy_policy' ) }}</h4>
+      {{ $t( 'home.no_data_stored' ) }}
+    </div>
+
+    <b-row class="text-center" style="margin-top: 40px;">
 
       <b-col col-sm="4">
         <h2>{{ $t( 'home.send_sms_header' ) }}</h2>

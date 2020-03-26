@@ -5,7 +5,9 @@
     "form_b_header": "Form B",
     "send_sms_para": "create the SMS",
     "form_a_para": "for employees and must be filled by the employer. It also applies for the self-employed",
-    "form_b_para": "for members of the public"
+    "form_b_para": "for members of the public",
+    "privacy_policy": "Privacy Policy",
+    "no_data_stored": "None of your data is stored on any server."
   },
   "sms": {
     "id_passport": "ID / Passport number",
@@ -18,7 +20,7 @@
     "generate_form_button": "Generate Form",
     "ok_modal_button": "OK",
     "a": {
-      "form_header": "CONFIRMATION FOR EMPLOYEE’S MOVEMENT",
+      "form_header": "CONFIRMATION FOR EMPLOYEE’S MOVEMENT *",
       "the_employee": "The employee",
       "of_company": "of the company/service/organization",
       "with_id_passport": "with identity card/passport number",
@@ -30,7 +32,7 @@
       "employer_supervisor_name": "Name of employer/supervisor",
       "signature": "Signature of employer/supervisor",
       "date": "Date",
-      "same_form_used": "The same form should be used by self-employed",
+      "same_form_used": "* The same form should be used by self-employed",
       "placeholders": {
         "employee_input": "employee",
         "company_input": "company/service/organization",

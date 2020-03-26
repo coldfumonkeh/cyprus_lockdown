@@ -4,13 +4,15 @@
 
     <b-row>
 
-      <b-col sm="3">
+      <b-col>
 
-        <b-form>
+        <b-form style="margin-bottom: 50px;">
 
-          <b-form-group :label="$t( 'forms.b.the_undersigned' )">
-            <b-form-input id="undersigned_input" v-model="undersigned_value" :placeholder="$t( 'forms.b.the_undersigned' )" />
-          </b-form-group>
+          <h3>{{ $t( 'forms.b.form_header' ) }}</h3>
+
+          <p style="margin-top: 40px;">
+            {{ $t( 'forms.b.the_undersigned' ) }} <b-form-input class="form-inline" id="employee_name" v-model="employee_name" :placeholder="$t( 'forms.a.placeholders.employee_input' )" />
+          </p>
 
           <b-form-group :label="$t( 'forms.b.date_of_birth' )">
             <datepicker id="dob_input" format="dd MMMM yyyy" v-model="dob_value" :placeholder="$t( 'forms.b.date_of_birth' )"></datepicker>
@@ -20,34 +22,12 @@
             <b-form-input id="id_input" v-model="id_value" :placeholder="$t( 'forms.b.id_number' )" />
           </b-form-group>
 
-
           <b-form-group :label="$t( 'forms.b.home_address' )">
             <b-form-input id="home_address_input" v-model="home_address_value" :placeholder="$t( 'forms.b.home_address' )" />
           </b-form-group>
 
-          <b-form-group :label="$t( 'forms.b.exact_time' )">
-            <vue-timepicker id="exat_time_input" input-class="form-control" hide-clear-button v-model="time_value" :placeholder="$t( 'forms.b.exact_time' )" format="HH:mm"></vue-timepicker>
-          </b-form-group>
-
-
-          <b-button variant="primary" @click="validateForm">{{ $t( 'forms.generate_form_button' ) }}</b-button>
-
-        </b-form>
-
-      </b-col>
-
-      <b-col sm="9">
-
-        <div id="formBHolder">
-          <h3>{{ $t( 'forms.b.form_header' ) }}</h3>
-
-          <p>{{ $t( 'forms.b.the_undersigned' ) }}: <strong>{{ undersigned_value }}</strong></p>
-          <p>{{ $t( 'forms.b.date_of_birth' ) }}: <span v-if="dob_value"><strong>{{ formattedDOB }}</strong></span></p>
-          <p>{{ $t( 'forms.b.id_number' ) }}: <strong>{{ id_value }}</strong></p>
-          <p>{{ $t( 'forms.b.home_address' ) }}: <strong>{{ home_address_value }}</strong></p>
-
-          <p>
-            {{ $t( 'forms.b.declare_need' ) }} <strong>{{ time_value }}</strong> {{ $t( 'forms.b.relates_to_reason' ) }}<br />
+          <p style="margin: 20px 0;">
+            {{ $t( 'forms.b.declare_need' ) }}  <vue-timepicker id="exact_time_input" input-class="form-control" hide-clear-button v-model="time_value" :placeholder="$t( 'forms.b.exact_time' )" format="HH:mm"></vue-timepicker> {{ $t( 'forms.b.relates_to_reason' ) }}<br />
             {{ $t( 'forms.b.tick_box' ) }}
           </p>
 
@@ -61,12 +41,14 @@
             <b-form-textarea v-model="anyOtherReasonText" rows="3" max-rows="6" :placeholder="$t( 'forms.b.any_other_reason_placeholder' )"></b-form-textarea>
           </div>
 
-
-          <p><strong>{{ $t( 'forms.b.id_note' ) }}</strong></p>
-          <p>{{ $t( 'forms.b.signature' ) }}</p>
+          <p style="margin: 50px 0;"><strong>{{ $t( 'forms.b.id_note' ) }}</strong></p>
+          <p style="margin: 50px 0;">{{ $t( 'forms.b.signature' ) }}: </p>
           <p>{{ $t( 'forms.b.date' ) }}: {{ signatureDate }}</p>
-        </div>
-        
+
+          <b-button block variant="primary" @click="validateForm">{{ $t( 'forms.generate_form_button' ) }}</b-button>
+
+        </b-form>
+
       </b-col>
 
     </b-row>

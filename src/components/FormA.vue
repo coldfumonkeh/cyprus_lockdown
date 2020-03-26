@@ -4,13 +4,15 @@
 
     <b-row>
 
-      <b-col sm="3">
+      <b-col>
 
-        <b-form>
+        <b-form style="margin-bottom: 50px;">
 
-          <b-form-group :label="$t( 'forms.a.the_employee' )">
-            <b-form-input id="employee_name" v-model="employee_name" :placeholder="$t( 'forms.a.placeholders.employee_input' )" />
-          </b-form-group>
+          <h3>{{ $t( 'forms.a.form_header' ) }}</h3>
+
+          <p style="margin-top: 40px;">
+            {{ $t( 'forms.a.the_employee' ) }} <b-form-input class="form-inline" id="employee_name" v-model="employee_name" :placeholder="$t( 'forms.a.placeholders.employee_input' )" />
+          </p>
 
           <b-form-group :label="$t( 'forms.a.of_company' )">
             <b-form-input id="company_name" v-model="company_name" :placeholder="$t( 'forms.a.placeholders.company_input' )" />
@@ -24,47 +26,25 @@
             <b-form-textarea v-model="district_value" rows="3" max-rows="6" :placeholder="$t( 'forms.a.placeholders.travel_to_districts' )"></b-form-textarea>
           </b-form-group>
 
-          <b-form-group :label="$t( 'forms.a.between' )">
-            <vue-timepicker id="from_time_input" input-class="form-control" hide-clear-button v-model="start_time_value" :placeholder="$t( 'forms.a.between' )" format="HH:mm"></vue-timepicker>
-          </b-form-group>
+          <p>
+            {{ $t( 'forms.a.between' ) }} <vue-timepicker id="from_time_input" input-class="form-control" hide-clear-button v-model="start_time_value" :placeholder="$t( 'forms.a.between' )" format="HH:mm"></vue-timepicker>&nbsp;
+            {{ $t( 'forms.a.and' ) }} <vue-timepicker id="to_time_input" input-class="form-control" hide-clear-button v-model="end_time_value" :placeholder="$t( 'forms.a.and' )" format="HH:mm"></vue-timepicker>&nbsp;{{ $t( 'forms.a.o_clock' ) }}.
+          </p>
 
-          <b-form-group :label="$t( 'forms.a.and' )">
-            <vue-timepicker id="to_time_input" input-class="form-control" hide-clear-button v-model="end_time_value" :placeholder="$t( 'forms.a.and' )" format="HH:mm"></vue-timepicker>
-          </b-form-group>
+          <p style="margin: 20px 0;">{{ $t( 'forms.a.shall_be_identified' ) }}</p>
 
           <b-form-group :label="$t( 'forms.a.employer_supervisor_name' )">
             <b-form-input v-model="employer_name" :placeholder="$t( 'forms.a.placeholders.employer_name' )" />
           </b-form-group>
 
-          <b-button variant="primary" @click="validateForm">{{ $t( 'forms.generate_form_button' ) }}</b-button>
+          <p style="margin: 50px 0;">{{ $t( 'forms.a.signature' ) }}: </p>
+          <p style="margin: 30px 0;">{{ $t( 'forms.a.date' ) }}: {{ signatureDate }}</p>
+          <p><strong>{{ $t( 'forms.a.same_form_used' ) }}</strong></p>
+
+          <b-button block variant="primary" @click="validateForm">{{ $t( 'forms.generate_form_button' ) }}</b-button>
 
         </b-form>
 
-      </b-col>
-
-      <b-col sm="9">
-
-        <div id="formAHolder">
-          <h3>{{ $t( 'forms.a.form_header' ) }}</h3>
-
-          <p>{{ $t( 'forms.a.the_employee' ) }}: <strong>{{ employee_name }}</strong></p>
-          <p>{{ $t( 'forms.a.of_company' ) }}: <strong>{{ company_name }}</strong></p>
-          <p>{{ $t( 'forms.a.with_id_passport' ) }}: <strong>{{ id_value }}</strong></p>
-          <p>{{ $t( 'forms.a.is_obliged_to_travel' ) }}</p>
-          <p><strong>{{ district_value }}</strong></p>
-
-          <p>
-            {{ $t( 'forms.a.between' ) }} <strong>{{ start_time_value }}</strong> {{ $t( 'forms.a.and' ) }}  <strong>{{ end_time_value }}</strong> {{ $t( 'forms.a.o_clock' ) }}
-          </p>
-
-          <p>{{ $t( 'forms.a.shall_be_identified' ) }}</p>
-          
-          <p>{{ $t( 'forms.a.employer_supervisor_name' ) }}: <strong>{{ employer_name }}</strong></p>
-          <p>{{ $t( 'forms.a.signature' ) }}</p>
-          <p>{{ $t( 'forms.a.date' ) }}: {{ signatureDate }}</p>
-          <p><strong>{{ $t( 'forms.a.same_form_used' ) }}</strong></p>
-        </div>
-        
       </b-col>
 
     </b-row>

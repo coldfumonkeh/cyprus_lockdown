@@ -1,4 +1,6 @@
 module.exports = {
+  publicPath: "/cyprus_lockdown",
+  outputDir: "docs",
   pluginOptions: {
     i18n: {
       locale: 'en',

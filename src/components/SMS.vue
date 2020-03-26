@@ -6,9 +6,11 @@
 
       <b-col>
 
+        <h3>{{ $t( 'sms.sms_header' ) }}</h3>
+
         <b-form>
 
-          <b-form-group :label="$t( 'sms.id_passport' )"> 
+          <b-form-group style="margin-top: 40px;" :label="$t( 'sms.id_passport' )"> 
             <b-form-input id="undersigned_input" v-model="id_value" :placeholder="$t( 'sms.id_passport' )" />
           </b-form-group>
 

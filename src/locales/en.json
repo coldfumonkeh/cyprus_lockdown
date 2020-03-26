@@ -10,6 +10,7 @@
     "no_data_stored": "None of your data is stored on any server."
   },
   "sms": {
+    "sms_header": "Send SMS",
     "id_passport": "ID / Passport number",
     "postcode": "postcode",
     "reason_for_going_out": "reason for going out",

@@ -3,12 +3,7 @@
   <b-container>
 
     <b-jumbotron header="Cyprus Lockdown Forms" lead="#stayInside #stayhome"></b-jumbotron>
-
-    <div class="alert alert-info" role="alert">
-      <h4 class="alert-heading">{{ $t( 'home.privacy_policy' ) }}</h4>
-      {{ $t( 'home.no_data_stored' ) }}
-    </div>
-
+    
     <b-row class="text-center" style="margin-top: 40px;">
 
       <b-col col-sm="4">

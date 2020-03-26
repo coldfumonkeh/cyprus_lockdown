@@ -6,7 +6,22 @@
 
       <b-col>
 
-        <div v-html="replaceJSONLineBreaks"></div>
+        <h3>{{ $t( 'legal_header' ) }}</h3>
+
+        <div style="margin-top: 40px;" v-html="replaceJSONLineBreaks"></div>
+
+      </b-col>
+
+    </b-row>
+
+    <b-row style="margin-top: 40px;">
+
+      <b-col>
+
+        <div class="alert alert-success" role="alert">
+          <h4 class="alert-heading">{{ $t( 'home.privacy_policy' ) }}</h4>
+          {{ $t( 'home.no_data_stored' ) }}
+        </div>
 
       </b-col>
 

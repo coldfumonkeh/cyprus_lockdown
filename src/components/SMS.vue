@@ -4,7 +4,13 @@
       
     <b-row>
 
-      <b-col>
+      <b-col v-if="under_curfew">
+        <div class="alert alert-danger" role="alert">
+          <h4 class="alert-heading">{{ $t( 'forms.curfew_active' ) }}</h4>
+        </div>
+      </b-col>
+
+      <b-col v-if="!under_curfew">
 
         <h3>{{ $t( 'sms.sms_header' ) }}</h3>
 
@@ -42,16 +48,26 @@
 
 <script>
 import { required } from 'vuelidate/lib/validators'
+import moment from 'moment';
 export default {
   name: 'SMS',
   components: {},
   data () {
     return {
-      decree_options: 8,
-      id_value: null,
-      postcode_value: null,
-      selectedOption: null,
-      anyOtherReasonText: null
+      decree_options    : 8,
+      id_value          : null,
+      postcode_value    : null,
+      selectedOption    : null,
+      anyOtherReasonText: null,
+      under_curfew      : false
+    }
+  },
+  created: function(){
+    // Check current time to see if it's within the curfew
+    var currTime = moment();
+    var currHour = currTime.get( 'hour' );
+    if( currHour >= 21 && currHour <= 6 ){
+      this.under_curfew = true;
     }
   },
   validations: {

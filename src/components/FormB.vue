@@ -4,7 +4,13 @@
 
     <b-row>
 
-      <b-col>
+      <b-col v-if="under_curfew">
+        <div class="alert alert-danger" role="alert">
+          <h4 class="alert-heading">{{ $t( 'forms.curfew_active' ) }}</h4>
+        </div>
+      </b-col>
+
+      <b-col v-if="!under_curfew">
 
         <b-form style="margin-bottom: 50px;">
 
@@ -15,7 +21,7 @@
           </p>
 
           <b-form-group :label="$t( 'forms.b.date_of_birth' )">
-            <datepicker id="dob_input" format="dd MMMM yyyy" v-model="dob_value" :placeholder="$t( 'forms.b.date_of_birth' )"></datepicker>
+            <datepicker @selected="check65" id="dob_input" format="dd MMMM yyyy" v-model="dob_value" :placeholder="$t( 'forms.b.date_of_birth' )"></datepicker>
           </b-form-group>
 
           <b-form-group :label="$t( 'forms.b.id_number' )">
@@ -43,7 +49,7 @@
 
           <p style="margin: 50px 0;"><strong>{{ $t( 'forms.b.id_note' ) }}</strong></p>
           <p style="margin: 50px 0;">{{ $t( 'forms.b.signature' ) }}: </p>
-          <p>{{ $t( 'forms.b.date' ) }}: {{ signatureDate }}</p>
+          <p>{{ $t( 'forms.b.date' ) }}: {{ formatSignatureDate }}</p>
 
           <b-button block variant="primary" @click="validateForm">{{ $t( 'forms.generate_form_button' ) }}</b-button>
 
@@ -79,7 +85,16 @@ export default {
       time_value        : '',
       selectedOption    : null,
       anyOtherReasonText: null,
-      signatureDate: new Date()
+      signatureDate     : new Date(),
+      under_curfew      : false
+    }
+  },
+  created: function(){
+    // Check current time to see if it's within the curfew
+    var currTime = moment();
+    var currHour = currTime.get( 'hour' );
+    if( currHour >= 21 && currHour <= 6 ){
+      this.under_curfew = true;
     }
   },
   validations: {
@@ -107,6 +122,16 @@ export default {
     }
   },
   methods: {
+    check65: function( selectedDOB ){
+      var yearDiff = moment().diff( selectedDOB, 'years' );
+      if( yearDiff < 65 ){
+        this.$swal( {
+          text: this.$t( 'forms.b.65_error' ),
+          icon: 'error',
+          confirmButtonText: this.$t( 'forms.ok_modal_button' )
+        } );
+      }
+    },
     customDateFormatter: function( date ){
       return moment(date).format( 'Do MMMM YYYY' );
     },

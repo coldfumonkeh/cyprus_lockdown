@@ -17,6 +17,7 @@
     "create_sms_button": "Create SMS"
   },
   "forms": {
+    "curfew_active": "Please stay at home between 9pm and 6am.",
     "missing_info": "Please complete the missing information",
     "generate_form_button": "Generate Form",
     "ok_modal_button": "OK",
@@ -66,7 +67,8 @@
       },
       "id_note": "Note: The citizens should carry their identity card/passport",
       "signature": "Signature",
-      "date": "Date"
+      "date": "Date",
+      "65_error": "You must be 65 or over to complete this form"
     }
   },
   "legal_header": "Legal Information",

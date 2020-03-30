@@ -38,7 +38,7 @@
           </b-form-group>
 
           <p style="margin: 50px 0;">{{ $t( 'forms.a.signature' ) }}: </p>
-          <p style="margin: 30px 0;">{{ $t( 'forms.a.date' ) }}: {{ signatureDate }}</p>
+          <p style="margin: 30px 0;">{{ $t( 'forms.a.date' ) }}: {{ formatSignatureDate }}</p>
           <p><strong>{{ $t( 'forms.a.same_form_used' ) }}</strong></p>
 
           <b-button block variant="primary" @click="validateForm">{{ $t( 'forms.generate_form_button' ) }}</b-button>

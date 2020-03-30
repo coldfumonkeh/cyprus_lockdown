@@ -35,7 +35,7 @@
 export default {
   name: 'App',
   data () {
-    return { langs: ['en', 'gr'] }
+    return { langs: ['en', 'el'] }
   }
 }
 </script>

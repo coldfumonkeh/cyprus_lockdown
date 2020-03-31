@@ -32,10 +32,22 @@
 </template>
 
 <script>
+import moment from 'moment';
 export default {
   name: 'App',
   data () {
-    return { langs: ['en', 'el'] }
+    return {
+      langs: ['en', 'el'],
+      under_curfew: false
+    }
+  },
+  created: function(){
+    // Check current time to see if it's within the curfew
+    var currTime = moment();
+    var currHour = currTime.get( 'hour' );
+    if( currHour >= 21 && currHour <= 6 ){
+      this.under_curfew = true;
+    }
   }
 }
 </script>

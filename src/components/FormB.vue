@@ -21,7 +21,7 @@
           </p>
 
           <b-form-group :label="$t( 'forms.b.date_of_birth' )">
-            <datepicker @selected="check65" id="dob_input" format="dd MMMM yyyy" v-model="dob_value" :placeholder="$t( 'forms.b.date_of_birth' )"></datepicker>
+            <datepicker @selected="check65" :open-date="dob_picker_65" id="dob_input" format="dd MMMM yyyy" v-model="dob_value" :placeholder="$t( 'forms.b.date_of_birth' )" input-class="form-control"></datepicker>
           </b-form-group>
 
           <b-form-group :label="$t( 'forms.b.id_number' )">
@@ -86,16 +86,15 @@ export default {
       selectedOption    : null,
       anyOtherReasonText: null,
       signatureDate     : new Date(),
-      under_curfew      : false
+      under_curfew      : false,
+      dob_picker_65     : null
     }
   },
   created: function(){
-    // Check current time to see if it's within the curfew
-    var currTime = moment();
-    var currHour = currTime.get( 'hour' );
-    if( currHour >= 21 && currHour <= 6 ){
+    if( this.$parent.under_curfew ){
       this.under_curfew = true;
     }
+    this.dob_picker_65 = moment().subtract( 65, 'years' )._d;
   },
   validations: {
     undersigned_value: {

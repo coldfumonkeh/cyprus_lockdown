@@ -48,7 +48,6 @@
 
 <script>
 import { required } from 'vuelidate/lib/validators'
-import moment from 'moment';
 export default {
   name: 'SMS',
   components: {},
@@ -63,10 +62,7 @@ export default {
     }
   },
   created: function(){
-    // Check current time to see if it's within the curfew
-    var currTime = moment();
-    var currHour = currTime.get( 'hour' );
-    if( currHour >= 21 && currHour <= 6 ){
+    if( this.$parent.under_curfew ){
       this.under_curfew = true;
     }
   },

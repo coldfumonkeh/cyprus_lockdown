@@ -87,7 +87,8 @@ export default {
       anyOtherReasonText: null,
       signatureDate     : new Date(),
       under_curfew      : false,
-      dob_picker_65     : null
+      dob_picker_65     : null,
+      dob_valid: false
     }
   },
   created: function(){
@@ -110,6 +111,9 @@ export default {
     home_address_value: {
       required,
       minLength: minLength( 2 )
+    },
+    time_value: {
+      required
     }
   },
   computed: {
@@ -124,18 +128,21 @@ export default {
     check65: function( selectedDOB ){
       var yearDiff = moment().diff( selectedDOB, 'years' );
       if( yearDiff < 65 ){
+        this.dob_valid = false;
         this.$swal( {
           text: this.$t( 'forms.b.65_error' ),
           icon: 'error',
           confirmButtonText: this.$t( 'forms.ok_modal_button' )
         } );
+      } else {
+        this.dob_valid = true;
       }
     },
     customDateFormatter: function( date ){
       return moment(date).format( 'Do MMMM YYYY' );
     },
     validateForm: function(){
-      if( this.$v.$invalid ){
+      if( this.$v.$invalid || !this.dob_valid ){
         this.$swal( {
           text: this.$t( 'forms.missing_info' ),
           icon: 'error',

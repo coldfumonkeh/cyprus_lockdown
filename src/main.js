@@ -20,6 +20,7 @@ import SMS from './components/SMS.vue';
 import FormA from './components/FormA.vue';
 import FormB from './components/FormB.vue';
 import Legal from './components/Legal.vue';
+import ChartContainer from './components/ChartContainer.vue';
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -56,6 +57,12 @@ const router = new VueRouter({
       path: '/legal',
       components: {
         default: Legal
+      }
+    },
+    {
+      path: '/chart',
+      components: {
+        default: ChartContainer
       }
     }
   ]

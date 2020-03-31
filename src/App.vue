@@ -14,6 +14,7 @@
             <b-nav-item><router-link to="/sms">{{ $t( 'home.send_sms_header' ) }}</router-link></b-nav-item>
             <b-nav-item><router-link to="/forma">{{ $t( 'home.form_a_header' ) }}</router-link></b-nav-item>
             <b-nav-item><router-link to="/formb">{{ $t( 'home.form_b_header' ) }}</router-link></b-nav-item>
+            <b-nav-item><router-link to="/chart">{{ $t( 'line_chart_menu_item' ) }}</router-link></b-nav-item>
             <b-nav-item><router-link to="/legal">{{ $t( 'legal_header' ) }}</router-link></b-nav-item>
             <div class="pull-right">
               <b-form-select v-model="$i18n.locale">
